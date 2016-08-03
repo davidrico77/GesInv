@@ -1,15 +1,30 @@
-INSERT INTO users (usersId,accountExpired, accountLocked, apellidos, credentialsExpired,email,enabled, nombre, password, telefono, username) VALUES (1, b'0', b'0', 'Rico Valverde', b'0', 'drv@gmail.com', b'1', 'David', '$2a$10$//HU8yTgOoLrZX6z9cgXhuR/IJki.BtS/ZM4Pr8s/zBDCFIT.I3P6', '607606620', 'root');
-INSERT INTO users (usersId,accountExpired, accountLocked, apellidos, credentialsExpired,email,enabled, nombre, password, telefono, username) VALUES (2, b'0', b'0', 'Nieto Cobo', b'0', 'email2@gmail.com', b'1', 'David', '$2a$10$n9v06bDngTF/33M9sPdRTeJQjWwTm4pJWqhbGaMYSDumEnXy.T2.G', '612357854', 'administrador');
-INSERT INTO users (usersId,accountExpired, accountLocked, apellidos, credentialsExpired,email,enabled, nombre, password, telefono, username) VALUES (3, b'0', b'0', 'Sánchez Torquemada', b'0', 'email3@gmail.com', b'1', 'Julio', '$2a$10$tfVFydVKjyHlRWJ/aDZKq.t5Hf/xGA.XwrMS5ZGgF5wFHUDwhPdxG', '683123654', 'gestor');
-INSERT INTO users (usersId,accountExpired, accountLocked, apellidos, credentialsExpired,email,enabled, nombre, password, telefono, username) VALUES (4, b'0', b'0', 'Roca Martínez', b'0', 'emai1@gmail.com', b'1', 'Miguel', '$2a$10$aY8xNKxmWpuU7Iu632pYpeuYJYOSYYzOvGBEkAuqAqp1XtA0afuJW', '612509750', 'invDavid');
-INSERT INTO users (usersId,accountExpired, accountLocked, apellidos, credentialsExpired,email,enabled, nombre, password, telefono, username) VALUES (5, b'0', b'0', 'Ramos Atienza', b'0', '5@gmail.com', b'1', 'Pablo', '$2a$10$aY8xNKxmWpuU7Iu632pYpeuYJYOSYYzOvGBEkAuqAqp1XtA0afuJW', '683511224', 'invIvan');
-INSERT INTO users (usersId,accountExpired, accountLocked, apellidos, credentialsExpired,email,enabled, nombre, password, telefono, username) VALUES (6, b'0', b'0', 'Gonzalez Prieto', b'0', '6@gmail.com', b'1', 'Ivan', '$2a$10$aY8xNKxmWpuU7Iu632pYpeuYJYOSYYzOvGBEkAuqAqp1XtA0afuJW', '654199009', 'invNieto');
-INSERT INTO users (usersId,accountExpired, accountLocked, apellidos, credentialsExpired,email,enabled, nombre, password, telefono, username) VALUES (7, b'0', b'0', 'Garía Romero', b'0', '7@gmail.com', b'1', 'Fernando', '$2a$10$aY8xNKxmWpuU7Iu632pYpeuYJYOSYYzOvGBEkAuqAqp1XtA0afuJW', '688332156', 'invRico');
-INSERT INTO users (usersId,accountExpired, accountLocked, apellidos, credentialsExpired,email,enabled, nombre, password, telefono, username) VALUES (8, b'0', b'0', 'Rebollo Fernández', b'0', '8@gmail.com', b'1', 'Marcos', '$2a$10$aY8xNKxmWpuU7Iu632pYpeuYJYOSYYzOvGBEkAuqAqp1XtA0afuJW', '650099888', 'invMarcos');
-INSERT INTO users (usersId,accountExpired, accountLocked, apellidos, credentialsExpired,email,enabled, nombre, password, telefono, username) VALUES (9, b'0', b'0', 'Mozos', b'0', 'danienlmozos@gmail.com', b'1', 'Daniel', '$2a$10$aY8xNKxmWpuU7Iu632pYpeuYJYOSYYzOvGBEkAuqAqp1XtA0afuJW', '652314557', 'decano');
-INSERT INTO users (usersId,accountExpired, accountLocked, apellidos, credentialsExpired,email,enabled, nombre, password, telefono, username) VALUES (10, b'0', b'0', 'UG', b'0', 'unidadGestora@gmail.com', b'1', 'Unidad Gestora', '$2a$10$aY8xNKxmWpuU7Iu632pYpeuYJYOSYYzOvGBEkAuqAqp1XtA0afuJW', '699887745', 'ug');
-INSERT INTO users (usersId,accountExpired, accountLocked, apellidos, credentialsExpired,email,enabled, nombre, password, telefono, username) VALUES (11, b'0', b'0', 'Informatica', b'0', 'dptoInformatica@gmail.com', b'1', 'DPTO Inteligencia Artificial', '$2a$10$aY8xNKxmWpuU7Iu632pYpeuYJYOSYYzOvGBEkAuqAqp1XtA0afuJW', '699887745', 'ia');
-INSERT INTO users (usersId,accountExpired, accountLocked, apellidos, credentialsExpired,email,enabled, nombre, password, telefono, username) VALUES (12, b'0', b'0', 'RRHH', b'0', 'rrhh@gmail.com', b'1', 'RRHH Centro', '$2a$10$aY8xNKxmWpuU7Iu632pYpeuYJYOSYYzOvGBEkAuqAqp1XtA0afuJW', '699887745', 'rrhh');
+
+-- Departamentos
+INSERT INTO departamento(id, nombre) VALUES ( 1, 'Sistemas Informáticos y Computación');
+INSERT INTO departamento(id, nombre) VALUES ( 2, 'Inteligencia Artificial');
+INSERT INTO departamento(id, nombre) VALUES ( 3, 'Análisis Matemático');
+INSERT INTO departamento(id, nombre) VALUES ( 4, 'Óptica');
+INSERT INTO departamento(id, nombre) VALUES ( 5, 'Economía Financiera y Contabilidad');
+
+-- Centros
+INSERT INTO centro(id, nombre) VALUES (1, 'Informática');
+INSERT INTO centro(id, nombre) VALUES (2, 'Matemáticas');
+INSERT INTO centro(id, nombre) VALUES (3, 'Físicas');
+
+INSERT INTO users (usersId,accountExpired, accountLocked, apellidos, credentialsExpired,email,enabled, nombre, password, telefono, username, centro, departamento) VALUES (1, b'0', b'0', 'Rico Valverde', b'0', 'drv@gmail.com', b'1', 'David', '$2a$10$//HU8yTgOoLrZX6z9cgXhuR/IJki.BtS/ZM4Pr8s/zBDCFIT.I3P6', '607606620', 'root', 1, 1);
+INSERT INTO users (usersId,accountExpired, accountLocked, apellidos, credentialsExpired,email,enabled, nombre, password, telefono, username, centro, departamento) VALUES (2, b'0', b'0', 'Nieto Cobo', b'0', 'email2@gmail.com', b'1', 'David', '$2a$10$n9v06bDngTF/33M9sPdRTeJQjWwTm4pJWqhbGaMYSDumEnXy.T2.G', '612357854', 'administrador', 2, 3);
+INSERT INTO users (usersId,accountExpired, accountLocked, apellidos, credentialsExpired,email,enabled, nombre, password, telefono, username, centro, departamento) VALUES (3, b'0', b'0', 'Sánchez Torquemada', b'0', 'email3@gmail.com', b'1', 'Julio', '$2a$10$tfVFydVKjyHlRWJ/aDZKq.t5Hf/xGA.XwrMS5ZGgF5wFHUDwhPdxG', '683123654', 'gestor', 3, 4);
+/*INSERT INTO users (usersId,accountExpired, accountLocked, apellidos, credentialsExpired,email,enabled, nombre, password, telefono, username, centro, departamento) VALUES (4, b'0', b'0', 'Roca Martínez', b'0', 'emai1@gmail.com', b'1', 'Miguel', '$2a$10$aY8xNKxmWpuU7Iu632pYpeuYJYOSYYzOvGBEkAuqAqp1XtA0afuJW', '612509750', 'invDavid', 1, 2);
+INSERT INTO users (usersId,accountExpired, accountLocked, apellidos, credentialsExpired,email,enabled, nombre, password, telefono, username, centro, departamento) VALUES (5, b'0', b'0', 'Ramos Atienza', b'0', '5@gmail.com', b'1', 'Pablo', '$2a$10$aY8xNKxmWpuU7Iu632pYpeuYJYOSYYzOvGBEkAuqAqp1XtA0afuJW', '683511224', 'invIvan', 2, 5);
+INSERT INTO users (usersId,accountExpired, accountLocked, apellidos, credentialsExpired,email,enabled, nombre, password, telefono, username, centro, departamento) VALUES (6, b'0', b'0', 'Gonzalez Prieto', b'0', '6@gmail.com', b'1', 'Ivan', '$2a$10$aY8xNKxmWpuU7Iu632pYpeuYJYOSYYzOvGBEkAuqAqp1XtA0afuJW', '654199009', 'invNieto', 3, 2);
+INSERT INTO users (usersId,accountExpired, accountLocked, apellidos, credentialsExpired,email,enabled, nombre, password, telefono, username, centro, departamento) VALUES (7, b'0', b'0', 'Garía Romero', b'0', '7@gmail.com', b'1', 'Fernando', '$2a$10$aY8xNKxmWpuU7Iu632pYpeuYJYOSYYzOvGBEkAuqAqp1XtA0afuJW', '688332156', 'invRico', 1, 1);
+INSERT INTO users (usersId,accountExpired, accountLocked, apellidos, credentialsExpired,email,enabled, nombre, password, telefono, username, centro, departamento) VALUES (8, b'0', b'0', 'Rebollo Fernández', b'0', '8@gmail.com', b'1', 'Marcos', '$2a$10$aY8xNKxmWpuU7Iu632pYpeuYJYOSYYzOvGBEkAuqAqp1XtA0afuJW', '650099888', 'invMarcos', 2, 3);
+INSERT INTO users (usersId,accountExpired, accountLocked, apellidos, credentialsExpired,email,enabled, nombre, password, telefono, username, centro, departamento) VALUES (9, b'0', b'0', 'Mozos', b'0', 'danienlmozos@gmail.com', b'1', 'Daniel', '$2a$10$aY8xNKxmWpuU7Iu632pYpeuYJYOSYYzOvGBEkAuqAqp1XtA0afuJW', '652314557', 'decano', 3, 5);
+INSERT INTO users (usersId,accountExpired, accountLocked, apellidos, credentialsExpired,email,enabled, nombre, password, telefono, username, centro, departamento) VALUES (10, b'0', b'0', 'UG', b'0', 'unidadGestora@gmail.com', b'1', 'Unidad Gestora', '$2a$10$aY8xNKxmWpuU7Iu632pYpeuYJYOSYYzOvGBEkAuqAqp1XtA0afuJW', '699887745', 'ug', 1, 1);
+INSERT INTO users (usersId,accountExpired, accountLocked, apellidos, credentialsExpired,email,enabled, nombre, password, telefono, username, centro, departamento) VALUES (11, b'0', b'0', 'Informatica', b'0', 'dptoInformatica@gmail.com', b'1', 'DPTO Inteligencia Artificial', '$2a$10$aY8xNKxmWpuU7Iu632pYpeuYJYOSYYzOvGBEkAuqAqp1XtA0afuJW', '699887745', 'ia', 2, 1);
+INSERT INTO users (usersId,accountExpired, accountLocked, apellidos, credentialsExpired,email,enabled, nombre, password, telefono, username, centro, departamento) VALUES (12, b'0', b'0', 'RRHH', b'0', 'rrhh@gmail.com', b'1', 'RRHH Centro', '$2a$10$aY8xNKxmWpuU7Iu632pYpeuYJYOSYYzOvGBEkAuqAqp1XtA0afuJW', '699887745', 'rrhh', 3, 5);
+
+*/
 
 
 INSERT INTO user_roles (usersId, role) VALUES (1, 'ROLE_ADMIN');
@@ -57,23 +72,10 @@ INSERT INTO user_roles (usersId, role) VALUES(9, 'ROLE_DECANO');
 INSERT INTO user_roles (usersId, role) VALUES(9, 'ROLE_USER');
 
 
--- Departamentos
-INSERT INTO departamento(id, nombre) VALUES ( 1, 'Sistemas Informáticos y Computación');
-INSERT INTO departamento(id, nombre) VALUES ( 2, 'Inteligencia Artificial');
-INSERT INTO departamento(id, nombre) VALUES ( 3, 'Análisis Matemático');
-INSERT INTO departamento(id, nombre) VALUES ( 4, 'Óptica');
-INSERT INTO departamento(id, nombre) VALUES ( 5, 'Economía Financiera y Contabilidad');
 
--- Centros
-INSERT INTO centro(id, nombre) VALUES (1, 'Informática');
-INSERT INTO centro(id, nombre) VALUES (2, 'Matemáticas');
-INSERT INTO centro(id, nombre) VALUES (3, 'Físicas');
+/*
 
-INSERT INTO investigadores (investigadorId,centro, departamento) VALUES (4, 1, 1);
-INSERT INTO investigadores (investigadorId,centro, departamento) VALUES (5, 2, 3);
-INSERT INTO investigadores (investigadorId,centro, departamento) VALUES (6, 3, 4);
-INSERT INTO investigadores (investigadorId,centro, departamento) VALUES (7, 1, 2);
-INSERT INTO investigadores (investigadorId,centro, departamento) VALUES (8, 2, 5);
+
 
 -- Unidades Gestoras
 INSERT INTO unidadgestora (id, nombre) VALUES (1, 'Fundación General UCM');
@@ -269,4 +271,4 @@ INSERT INTO `gesinvdb`.`comisionservicio` (`id`, `estado`, `fin`, `gastosInscrip
 (10, 'ACEPTADO', '2016-07-30', b'0', '2016-07-31', 'Turquía', 'Curso Jquery', '-', '1', '4', '1');
 
 
-INSERT INTO `gesinvdb`.`comisionservicio_vbs` (`ComisionServicio_id`, `vbs`, `vbs_KEY`) VALUES ('1', '2016-07-16', 'Edición');
+INSERT INTO `gesinvdb`.`comisionservicio_vbs` (`ComisionServicio_id`, `vbs`, `vbs_KEY`) VALUES ('1', '2016-07-16', 'Edición');*/

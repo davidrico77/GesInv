@@ -52,7 +52,7 @@ public class UserManager implements UserDetailsService{
 	}
 	
 	public User addGestor(UserDTO gestor) {
-		User user = new User (gestor.getUsername(), gestor.getPassword(), gestor.getNombre(), gestor.getApellidos(), gestor.getTelefono(), gestor.getEmail());
+		User user = new User (gestor.getUsername(), gestor.getPassword(), gestor.getNombre(), gestor.getApellidos(), gestor.getTelefono(), gestor.getEmail(),null,null);
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		user.addRole(new UserRole("ROLE_GESTOR"));	
 		user.addRole(new UserRole("ROLE_INVESTIGADOR"));
@@ -61,7 +61,7 @@ public class UserManager implements UserDetailsService{
 	}
 	
 	public User addAdmin(UserDTO admin) {		
-		User user = new User (admin.getUsername(), admin.getPassword(), admin.getNombre(), admin.getApellidos(), admin.getTelefono(), admin.getEmail());
+		User user = new User (admin.getUsername(), admin.getPassword(), admin.getNombre(), admin.getApellidos(), admin.getTelefono(), admin.getEmail(),null,null);
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		user.addRole(new UserRole("ROLE_ADMIN"));	
 		user.addRole(new UserRole("ROLE_GESTOR"));	
@@ -71,12 +71,13 @@ public class UserManager implements UserDetailsService{
 	}
 
 	public Investigador addInvestigador(NuevoInvestigadorDTO nuevoInvestigadorDTO){
-		User user = new User(nuevoInvestigadorDTO.getUsername(), nuevoInvestigadorDTO.getPassword(), nuevoInvestigadorDTO.getNombre(), nuevoInvestigadorDTO.getApellidos(), nuevoInvestigadorDTO.getTelefono(), nuevoInvestigadorDTO.getEmail());
+		User user = new User(nuevoInvestigadorDTO.getUsername(), nuevoInvestigadorDTO.getPassword(), nuevoInvestigadorDTO.getNombre(), nuevoInvestigadorDTO.getApellidos(), nuevoInvestigadorDTO.getTelefono(), nuevoInvestigadorDTO.getEmail(),nuevoInvestigadorDTO.getDepartamento(), nuevoInvestigadorDTO.getCentro());
 		user.addRole(new UserRole("ROLE_INVESTIGADOR"));
 		user.addRole(new UserRole("ROLE_USER"));
 		user = addUser(user);	
 		
-		Investigador inv = new Investigador(user.getId(), nuevoInvestigadorDTO.getDepartamento(), nuevoInvestigadorDTO.getCentro());			
+		Investigador inv = new Investigador();		
+		// CAMBIAR ORDER DE CREACION.
 		return this.investigadores.save(inv);
 	}
 	

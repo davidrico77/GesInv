@@ -11,7 +11,10 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -19,8 +22,12 @@ import org.springframework.security.core.CredentialsContainer;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import ucm.fdi.tfg.centros.business.entity.Centro;
+import ucm.fdi.tfg.departamentos.business.entity.Departamento;
+
 @Entity
 @Table(name = "Users")
+@Inheritance ( strategy = InheritanceType.SINGLE_TABLE)
 public class User implements UserDetails, CredentialsContainer {
 
 	private static final long serialVersionUID = 1L;
@@ -50,6 +57,14 @@ public class User implements UserDetails, CredentialsContainer {
 	private String apellidos;
 	private String telefono;
 	private String email;
+	
+	@ManyToOne
+	@JoinColumn(name="departamento")
+	private Departamento departamento;
+	
+	@ManyToOne
+	@JoinColumn(name="centro")
+	private Centro centro;
 
 	public User() {
 		this.roles = new ArrayList<UserRole>();
@@ -57,9 +72,11 @@ public class User implements UserDetails, CredentialsContainer {
 		this.accountExpired = false;
 		this.accountLocked = false;
 		this.credentialsExpired = false;
+		this.departamento = departamento;
+		this.centro = centro;
 	}
 
-	public User(String username, String password, String nombre, String apellidos, String telefono, String email) {
+	public User(String username, String password, String nombre, String apellidos, String telefono, String email,Departamento departamento, Centro centro) {
 		this.username = username;
 		this.password = password;
 		this.enabled = true;
@@ -72,6 +89,8 @@ public class User implements UserDetails, CredentialsContainer {
 		this.apellidos = apellidos;
 		this.telefono = telefono;
 		this.email = email;
+		this.departamento = departamento;
+		this.centro = centro;
 	}
 
 	public String getNombre() {
@@ -145,6 +164,22 @@ public class User implements UserDetails, CredentialsContainer {
 
 	public void removeRole(UserRole role) {
 		this.roles.remove(role);
+	}
+	
+	public Departamento getDepartamento() {
+		return departamento;
+	}
+
+	public void setDepartamento(Departamento departamento) {
+		this.departamento = departamento;
+	}
+
+	public Centro getCentro() {
+		return centro;
+	}
+
+	public void setCentro(Centro centro) {
+		this.centro = centro;
 	}
 
 	@Override

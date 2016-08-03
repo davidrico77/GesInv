@@ -37,7 +37,7 @@ public class Proyecto {
 	private String titulo;
 	
 	@ManyToOne
-	@JoinColumn(name="investigadorID")
+	@JoinColumn(name="usersId")
 	private Investigador investigadorPrincipal;
 	
 	@ManyToMany

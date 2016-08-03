@@ -5,6 +5,7 @@ import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -17,19 +18,16 @@ import ucm.fdi.tfg.proyecto.business.entity.Proyecto;
 
 @Entity
 @Table(name = "Investigadores")
-public class Investigador {
+public class Investigador extends User{
 
-	@Id
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/*//@Id
 	@Column(name = "investigadorId")
-	private Long id;
-
-	@ManyToOne
-	@JoinColumn(name="departamento")
-	private Departamento departamento;
-	
-	@ManyToOne
-	@JoinColumn(name="centro")
-	private Centro centro;
+	private Long idinv; */
 	
 	@OneToMany(mappedBy="investigadorPrincipal")
 	private Collection<Proyecto> proyectosDirigidos;
@@ -41,32 +39,14 @@ public class Investigador {
 
 	}
 
-	public Investigador(Long id, Departamento departamento, Centro centro) {
-		this.id = id;
-		this.departamento = departamento;
-		this.centro = centro;
+	/*public Investigador(Long id) {
+		this.idinv = id;
 	}
 
 	public Long getId() {
-		return id;
+		return idinv;
 	}
-
-	public Departamento getDepartamento() {
-		return departamento;
-	}
-
-	public void setDepartamento(Departamento departamento) {
-		this.departamento = departamento;
-	}
-
-	public Centro getCentro() {
-		return centro;
-	}
-
-	public void setCentro(Centro centro) {
-		this.centro = centro;
-	}
-
+*/
 	
 	public Collection<Proyecto> getProyectosDirigidos() {
 		return proyectosDirigidos;
